@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+int main() {
+	//Sales Tax Calculator 
+	//Sales tax for PC components is 16%
+	//price*quantity+tax-discount=final price
+
+
+	cout << "For How many products do You want to calculate total Cost " << endl;									// Number of times user wants to check the final cost of product 
+	int check;
+	cin >> check;
+	if (check > 0) {
+		for (int i = 1; i < check; i++) {
+
+
+
+			cout << " Enter the Price of the Product " << endl;                                                    //Price
+			int price;
+			cin >> price;
+			cout << "Enter Number of sold units" << endl;                                                          //Quantity
+			int units;
+			cin >> units;
+
+
+			int discount;
+			int final_price;																						// Total Cost 
+			float tax = (price / 100) * 16;
+			cout << "Your Tax per Unit is" << " " << tax << endl;
+
+			if (units >= 10) {
+
+				//You will have 10% discount 
+				cout << "Since the products are higher than 10 So You will have 10% discount " << endl;
+				discount = (price / 100) * 10;
+				cout << " Your Discount is " << " " << discount << endl;
+				final_price = price * units + tax - discount;
+				cout << "Your final Price for the product is " << " " << final_price;
+
+			}
+
+			else if (units < 10) {
+				//You will have No discount 
+				discount = 0;
+				cout << "Since the products are less than 10 so no discount " << endl;
+				final_price = price * units + tax - discount;
+				cout << "Your final Price for the product is " << " " << final_price;
+
+
+			}
+			continue;
+
+
+		}
+	}
+
+
+	return 0;
+}
